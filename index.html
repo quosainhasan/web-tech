@@ -3,62 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Technology</title>
+    <title>Web Technology Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
             background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header {
             text-align: center;
+            margin-bottom: 40px;
         }
-        h1 {
+        .header h1 {
+            font-size: 3em;
             color: #333;
-            margin-top: 50px;
+            margin-bottom: 10px;
         }
-        p {
-            color: #666;
-            margin: 10px 0;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-        }
-        a:hover {
+        .header p {
+            font-size: 1.2em;
             color: #666;
         }
-        img {
-            margin-top: 50px;
-            width: 20%;
-            height: auto;
-            border-radius: 50px 0 50px 0;
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .project {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px;
+            width: 300px;
+            padding: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .project:hover {
+            transform: translateY(-10px);
+        }
+        .project img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .project h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .project p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animated {
+            animation: fadeInUp 1s ease-out;
         }
     </style>
 </head>
 <body>
-    <!-- Create a modern web page to display landing page for all my project -->
-    <h1>Web Technology</h1>
-    <p>Welcome to my web technology page. Here you will find all my projects for the web technology course.</p>
-    <ul>
-        <li><a href="./timetable.html">Time table</a></li>
-        <li><a href="https://quosainhasan.github.io/newcv/">CV</a></li>
-        <li><a href="./registration.html">Registration</a></li>
-        <li><a href="./railwayticketregistration.html">Railway Ticket Registration</a></li>
-        <li><a href="./welcome.html">Welcome Message</a></li>
-        <li><a href="./sumandmulti.html">Sum and Multiple</a></li>
-        <li><a href="./student.html">Student Registration</a></li>
-        <li><a href="./area.html">Triangle Area Calculator</a></li>
-        <li><a href="./three.html">Three Forms</a></li>
-    </ul>
-    <img src="./images/image.jpg" alt="">
-    <p>Click on the links above to view the projects.</p>
-    <p>Thank you for visiting my page.</p>
+    <div class="container">
+        <div class="header animated">
+            <h1>Welcome to My Projects</h1>
+            <p>Explore my latest works and projects below.</p>
+        </div>
+        <div class="projects">
+            <div class="project animated">
+                <h2>Time table</h2>
+                <a href="./timetable.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>CV</h2>
+                <a href="https://quosainhasan.github.io/newcv/">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Registration</h2>
+                <a href="./registration.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Railway Ticket Registration</h2>
+                <a href="./railwayticketregistration.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Welcome Message</h2>
+                <a href="./welcome.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Sum and Multiple</h2>
+                <a href="./sumandmulti.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Student Registration</h2>
+                <a href="./student.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Triangle Area Calculator</h2>
+                <a href="./area.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Three Forms</h2>
+                <a href="./three.html">View Project</a>
+            </div>
+            <div class="project animated">
+                <h2>Three Forms</h2>
+                <a href="./three.html">View Project</a>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </div>
+
+    <script>
+        // Add animation to projects after DOM content is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach((project, index) => {
+                setTimeout(() => {
+                    project.classList.add('animated');
+                }, index * 200); // Delay each project animation
+            });
+        });
+    </script>
 </body>
 </html>
